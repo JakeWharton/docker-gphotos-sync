@@ -12,5 +12,11 @@ else
   echo "INFO: Starting sync!"
   /gphotos-cdp -v -dev -headless -dldir /download
 
+  if [ -z "$CHECK_URL" ]; then
+    echo "INFO: Define CHECK_URL with https://healthchecks.io to monitor sync job"
+  else
+    wget $CHECK_URL -O /dev/null
+  fi
+
   rm -f /tmp/sync.pid
 fi

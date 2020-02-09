@@ -92,6 +92,13 @@ The above version will run every hour and download any new photos. For help crea
  [2]: https://cron.help/#0_*_*_*_*
 
 
+### Monitoring
+
+To be notified when sync is failing visit https://healthchecks.io, create a check, and specify the URL to the container using the `CHECK_URL` environment variable.
+
+Because the sync can occasionally fail, it's best to set a grace period on the check which is a multiple of your cron period. For example, if you run sync hourly give a grace period of two hours.
+
+
 ### Diagnosing Blockages
 
 The script will occasionally fail to download an image. This usually isn't something to worry about and it will resume when retried (either manually or automatically).
@@ -116,6 +123,7 @@ services:
       - /path/to/download:/download
     environment:
       - "CRON=0 * * * *"
+      - "CHECK_URL=..." #Optional!
 ```
 
 

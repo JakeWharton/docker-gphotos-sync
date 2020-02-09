@@ -16,6 +16,7 @@ FROM zenika/alpine-chrome:latest
 LABEL maintainer="Jake Wharton <jakewharton@gmail.com>"
 
 ENV CRON=
+ENV CHECK_URL=
 ENV TZ=
 
 COPY --from=build /code/bin/gphotos-cdp /
