@@ -101,13 +101,13 @@ Because the sync can occasionally fail, it's best to set a grace period on the c
 
 ### Diagnosing Blockages
 
-The script will occasionally fail to download an image. This usually isn't something to worry about and it will resume when retried (either manually or automatically).
+The script will occasionally fail to download an image or video. This usually isn't something to worry about and it will resume when retried (either manually or automatically).
 
-Sometimes, however, the script will get stuck on a single image and be unable to make progress.
+Sometimes, however, the script will get stuck on a single item and be unable to make progress. Usually this item will be a video.
 
-When this happens, open the last Google Photos link from the logs. This is the last successful image that was download. Pressing the left arrow will move forward in time to the offending image. If you click "Download" in the three-dot menu and the image downloads then keep trying. But if it fails to download, there is something wrong on Google's side. The only recourse is to delete the image. This will allow the script to continue on its next run.
+When this happens, open the last Google Photos link from the logs. This is the last successful item that was download. Pressing the left arrow will move forward in time to the offending item. If you click "Download" in the three-dot menu and the item downloads then keep trying the sync. But if it fails to download, there is something wrong on Google's side. The only recourse is to delete the image or video. This will allow the script to continue on its next run.
 
-Deleting an image should be a last resort. Retry at least 5 times, potentially waiting a day or two in between. You can also get a Google Takeout of your Photos data and look for the image in the resulting archives.
+Deleting an image or video should be a last resort. Retry at least 5 times, potentially waiting an hour or two in between. You can also get a Google Takeout of your Photos data and look for the item in the resulting archives.
 
 
 ### Docker Compose
