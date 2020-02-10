@@ -10,7 +10,7 @@ else
   echo $$ > /tmp/sync.pid
 
   echo "INFO: Starting sync!"
-  /gphotos-cdp -v -dev -headless -dldir /download
+  /gphotos-cdp -v -dev -headless -dldir /download -run /fix_time.sh
 
   if [ -z "$CHECK_URL" ]; then
     echo "INFO: Define CHECK_URL with https://healthchecks.io to monitor sync job"
