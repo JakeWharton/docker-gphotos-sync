@@ -1,0 +1,23 @@
+name: build and publish
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build and Publish
+      uses: jerray/publish-docker-action@master
+      with:
+        username: jakewharton
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        repository: jakewharton/gphotos-sync
