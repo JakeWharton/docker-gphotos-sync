@@ -30,8 +30,21 @@ Select and create two directories:
 ### Sign In
 
 In order for the headless, automatic sync to work, you need to first authenticate with your Google account.
-To do this, we start a Linux-based Docker container with Chrome and remotely sign in.
 
+#### Linux
+
+Open a terminal and run the following command.
+```
+chromium-browser --user-data-dir=/path/to/config --no-sandbox https://photos.google.com
+```
+
+Click "Go to photos" and sign in to your Google account. You are free to use your real password or to create an app-specific password.
+
+Close the Chrome window. You're done!
+
+#### MacOS / Windows
+
+To do this, we start a Linux-based Docker container with Chrome and remotely sign in.
 
 In a terminal, run the following command, replacing `/path/to/config` with your chosen "config" directory.
 ```
@@ -40,7 +53,7 @@ $ docker run -p 6080:80 \
     dorowu/ubuntu-desktop-lxde-vnc
 ```
 
-Visit http://localhost:6080 which will connect to the container's desktop.
+Visit http://localhost:6080 (or http://server-ip:6080 if running on a remote machine) which will connect to the container's desktop.
 
 Inside the container desktop, open a terminal and run the following command.
 ```
@@ -54,7 +67,7 @@ Close the Chrome window inside the container desktop.
 
 Close your browser's tab.
 
-Press CTRL+C to quit the Docker image.
+Press CTRL+C to quit the Docker image. You're done!
 
 
 ### Initial Sync
