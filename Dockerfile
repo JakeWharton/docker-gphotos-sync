@@ -20,7 +20,7 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/reposi
       nss@edge \
       freetype@edge \
       ttf-freefont@edge \
-      tzdata@edge
+      tzdata@edge \
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
