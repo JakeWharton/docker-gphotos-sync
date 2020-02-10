@@ -154,7 +154,10 @@ MIT. See `LICENSE.txt`.
 
     Copyright 2020 Jake Wharton
 
-Much of the container scripts were derived from [bcardiff/docker-rclone][3]. The Chrome installation in the `Dockerfile` is from [Zenika/alpine-chrome][4].
+Much of the container scripts were derived from [bcardiff/docker-rclone][3].
+The Chrome installation in the `Dockerfile` is from [Zenika/alpine-chrome][4].
+`jhead` installation from [sourcelevel/engine-image-optim][5]
 
  [3]: https://github.com/bcardiff/docker-rclone
  [4]: https://github.com/Zenika/alpine-chrome
+ [5]: https://github.com/sourcelevel/engine-image-optim
