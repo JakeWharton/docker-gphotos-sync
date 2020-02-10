@@ -37,7 +37,7 @@ In order for the headless, automatic sync to work, you need to first authenticat
 
 Open a terminal and run the following command.
 ```
-chromium-browser --user-data-dir=/path/to/config --no-sandbox https://photos.google.com
+chromium-browser --user-data-dir=/path/to/config https://photos.google.com
 ```
 
 Click "Go to photos" and sign in to your Google account. You are free to use your real password or to create an app-specific password.
