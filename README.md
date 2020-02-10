@@ -147,7 +147,7 @@ services:
 
 
 
-LICENE
+LICENSE
 ======
 
 MIT. See `LICENSE.txt`.
