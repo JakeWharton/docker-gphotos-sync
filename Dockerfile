@@ -1,5 +1,6 @@
 FROM golang:alpine AS build
 RUN apk add --no-cache git
+RUN apk add --no-cache tzdata
 RUN go get github.com/perkeep/gphotos-cdp
 
 
