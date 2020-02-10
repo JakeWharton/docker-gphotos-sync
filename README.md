@@ -69,6 +69,7 @@ This allows you to temporarily interrupt it at any point and also intervene if i
 $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/downloads:/download \
+    --cap-add=SYS_ADMIN
     JakeWharton/gphotos-sync
 ```
 
@@ -84,6 +85,7 @@ $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/download:/download \
     -e "CRON=0 * * * *"
+    --cap-add=SYS_ADMIN
     JakeWharton/gphotos-sync
 ```
 
@@ -118,6 +120,8 @@ services:
   gphotos-sync:
     image: JakeWharton/gphotos-sync:latest
     restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
     volumes:
       - /path/to/config:/tmp/gphotos-cdp
       - /path/to/download:/download
