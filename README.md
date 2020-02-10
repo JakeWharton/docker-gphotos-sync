@@ -133,7 +133,7 @@ Deleting an image or video should be a last resort. Retry at least 5 times, pote
 version: '2'
 services:
   gphotos-sync:
-    image: JakeWharton/gphotos-sync:latest
+    image: jakewharton/gphotos-sync:latest
     restart: unless-stopped
     cap_add:
       - SYS_ADMIN
