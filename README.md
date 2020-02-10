@@ -85,7 +85,7 @@ $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/downloads:/download \
     --cap-add=SYS_ADMIN
-    JakeWharton/gphotos-sync
+    jakewharton/gphotos-sync
 ```
 
 This will run until all photos have been downloaded. At this point, you should set it up to run automatically on a schedule.
@@ -101,7 +101,7 @@ $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/do/download:/download \
     -e "CRON=0 * * * *"
     --cap-add=SYS_ADMIN
-    JakeWharton/gphotos-sync
+    jakewharton/gphotos-sync
 ```
 
 The above version will run every hour and download any new photos. For help creating a valid cron specifier, visit [cron.help][2].
