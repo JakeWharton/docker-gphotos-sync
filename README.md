@@ -81,10 +81,9 @@ It is not required, but if you'd like to run this sync manually you can choose t
 This allows you to temporarily interrupt it at any point and also intervene if it gets stuck.
 
 ```bash
-$ docker run -it --rm --cap-add=SYS_ADMIN \
+$ docker run -it --rm
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/downloads:/download \
-    --cap-add=SYS_ADMIN \
     jakewharton/gphotos-sync
 ```
 
@@ -96,11 +95,10 @@ This will run until all photos have been downloaded. At this point, you should s
 To run the sync automatically on a schedule, pass a valid cron specifier as the `CRON` environment variable.
 
 ```bash
-$ docker run -it --rm --cap-add=SYS_ADMIN \
+$ docker run -it --rm
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/download:/download \
     -e "CRON=0 * * * *" \
-    --cap-add=SYS_ADMIN \
     jakewharton/gphotos-sync
 ```
 
@@ -135,8 +133,6 @@ services:
   gphotos-sync:
     image: jakewharton/gphotos-sync:latest
     restart: unless-stopped
-    cap_add:
-      - SYS_ADMIN
     volumes:
       - /path/to/config:/tmp/gphotos-cdp
       - /path/to/download:/download

@@ -17,7 +17,8 @@ LABEL maintainer="Jake Wharton <jakewharton@gmail.com>"
 
 ENV CRON="" \
     CHECK_URL="" \
-    TZ=""
+    TZ="" \
+    CHROMIUM_USER_FLAGS="--no-sandbox"
 
 # Installs latest Chromium package.
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/repositories \
