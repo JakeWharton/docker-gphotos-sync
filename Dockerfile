@@ -15,9 +15,9 @@ RUN go get github.com/perkeep/gphotos-cdp
 FROM alpine:latest
 LABEL maintainer="Jake Wharton <jakewharton@gmail.com>"
 
-ENV CRON=
-ENV CHECK_URL=
-ENV TZ=
+ENV CRON="" \
+    CHECK_URL="" \
+    TZ=""
 
 # Installs latest Chromium package.
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/repositories \
