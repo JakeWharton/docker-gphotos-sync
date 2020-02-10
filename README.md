@@ -49,7 +49,7 @@ Close the Chrome window. You're done!
 To do this, we start a Linux-based Docker container with Chrome and remotely sign in.
 
 In a terminal, run the following command, replacing `/path/to/config` with your chosen "config" directory.
-```
+```bash
 $ docker run -p 6080:80 \
     -v /path/to/config:/config \
     dorowu/ubuntu-desktop-lxde-vnc
@@ -58,7 +58,7 @@ $ docker run -p 6080:80 \
 Visit http://localhost:6080 (or http://server-ip:6080 if running on a remote machine) which will connect to the container's desktop.
 
 Inside the container desktop, open a terminal and run the following command.
-```
+```bash
 chromium-browser --user-data-dir=/config --no-sandbox https://photos.google.com
 ```
 (Note: Do not change the `/config` path!)
@@ -80,11 +80,11 @@ This is a _very_ slow operation that will take many hours or even days. Yes, day
 It is not required, but if you'd like to run this sync manually you can choose to do so.
 This allows you to temporarily interrupt it at any point and also intervene if it gets stuck.
 
-```
+```bash
 $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/downloads:/download \
-    --cap-add=SYS_ADMIN
+    --cap-add=SYS_ADMIN \
     jakewharton/gphotos-sync
 ```
 
@@ -95,12 +95,12 @@ This will run until all photos have been downloaded. At this point, you should s
 
 To run the sync automatically on a schedule, pass a valid cron specifier as the `CRON` environment variable.
 
-```
+```bash
 $ docker run -it --rm --cap-add=SYS_ADMIN \
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/download:/download \
-    -e "CRON=0 * * * *"
-    --cap-add=SYS_ADMIN
+    -e "CRON=0 * * * *" \
+    --cap-add=SYS_ADMIN \
     jakewharton/gphotos-sync
 ```
 
