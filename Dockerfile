@@ -1,6 +1,5 @@
 FROM golang:alpine AS build
 RUN apk add --no-cache git
-RUN apk add --no-cache tzdata
 RUN go get github.com/perkeep/gphotos-cdp
 
 
@@ -21,6 +20,7 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/reposi
       nss@edge \
       freetype@edge \
       ttf-freefont@edge \
+      tzdata@edge
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
