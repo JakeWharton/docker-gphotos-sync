@@ -7,8 +7,9 @@ if [ -z "$1" ];then
   exit 1
 fi
 
-if [ "${1: -4}" == ".jpg" ]; then
+EXTENSION=$(echo "${1##*.}" | tr '[:upper:]' '[:lower:]')
+if [ "$EXTENSION" = "jpg" ] || [ "$EXTENSION" = "jpeg" ]; then
   jhead -ft "$1"
 else
-  echo "Unable to set file mtime. Unsupported file extension."
+  echo "Unable to set file mtime. Unsupported file extension: $EXTENSION"
 fi
