@@ -11,9 +11,9 @@ fi
 
 set -e
 
-if [ ! -z "$TZ" ]; then
-  cp /usr/share/zoneinfo/$TZ /etc/localtime
-  echo $TZ > /etc/timezone
+if [ -n "$TZ" ]; then
+  cp "/usr/share/zoneinfo/$TZ" /etc/localtime
+  echo "$TZ" > /etc/timezone
 fi
 
 rm -f /tmp/sync.pid
