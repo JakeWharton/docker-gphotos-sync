@@ -1,5 +1,9 @@
 FROM golang:alpine AS build
-RUN apk add --no-cache git wget build-base
+RUN apk add --no-cache git wget build-base shellcheck
+
+RUN mkdir /overlay
+COPY root/ /overlay/
+RUN shellcheck /overlay/*
 
 # From https://github.com/sourcelevel/engine-image-optim/blob/2de5967c666fc3f7f8f24e67c0c445da403a67ef/Dockerfile#L61-L64
 ENV JHEAD_VERSION=3.04
