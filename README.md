@@ -57,7 +57,8 @@ $ docker run -p 6080:80 \
 
 Visit http://localhost:6080 (or http://server-ip:6080 if running on a remote machine) which will connect to the container's desktop.
 
-Inside the container desktop, open a terminal and run the following command.
+Inside the container desktop, click on the menu (lower left icon), go to "System Tools", and select "LXTerminal".
+Run the following command.
 ```bash
 chromium-browser --user-data-dir=/config --no-sandbox https://photos.google.com
 ```
