@@ -15,7 +15,7 @@ else
   if [ -z "$CHECK_URL" ]; then
     echo "INFO: Define CHECK_URL with https://healthchecks.io to monitor sync job"
   else
-    wget "$CHECK_URL" -O /dev/null
+    curl -sS "$CHECK_URL"
   fi
 
   rm -f /tmp/sync.pid
