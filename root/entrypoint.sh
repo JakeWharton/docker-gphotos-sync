@@ -32,7 +32,8 @@ else
   echo "INFO: Starting crond ..."
   touch /tmp/sync.log
   touch /tmp/crond.log
-  crond -b -l 0 -L /tmp/crond.log
+  # Log level 5 (and below) is noisy during periodic wakeup where nothing happens.
+  crond -b -l 6 -L /tmp/crond.log
   echo "INFO: crond started"
   tail -F /tmp/crond.log /tmp/sync.log
 fi
