@@ -139,7 +139,8 @@ services:
       - /path/to/download:/download
     environment:
       - "CRON=0 * * * *"
-      - "CHECK_URL=..." #Optional!
+      #Optional:
+      - "CHECK_URL=..."
 ```
 
 
