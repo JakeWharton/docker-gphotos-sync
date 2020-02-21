@@ -144,14 +144,6 @@ services:
 ```
 
 
-### Running As User
-
-Docker runs the container runs as `root` by default which means the files it writes are owned by
-`root` and its group. To run as a user, use Docker's built-in `--user` flag which takes an ID and
-GID that can be obtained by the `id` command.
-
-For more information and Docker Compose instructions, read ["Running a Docker container as a non-root user](https://medium.com/redbubble/running-a-docker-container-as-a-non-root-user-7d2e00f8ee15).
-
 
 LICENSE
 ======
