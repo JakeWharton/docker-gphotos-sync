@@ -17,7 +17,7 @@ RUN go get github.com/perkeep/gphotos-cdp
 
 
 FROM alpine:latest
-LABEL maintainer="Jake Wharton <jakewharton@gmail.com>"
+LABEL maintainer="Jake Wharton <docker@jakewharton.com>"
 
 ENV CRON="" \
     HEALTHCHECK_ID="" \
