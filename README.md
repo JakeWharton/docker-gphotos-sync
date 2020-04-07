@@ -149,6 +149,9 @@ services:
       - "HEALTHCHECK_ID=..."
 ```
 
+Note: You may want to specify an explicit version rather than `latest`.
+See https://hub.docker.com/r/jakewharton/gphotos-sync/tags.
+
 
 
 LICENSE
