@@ -153,6 +153,19 @@ Note: You may want to specify an explicit version rather than `latest`.
 See https://hub.docker.com/r/jakewharton/gphotos-sync/tags.
 
 
+Development
+-----------
+
+With Docker installed, `docker build .` will give you a SHA that you can use.
+```
+$ docker build .
+...
+Successfully built 7b431e7e9868
+```
+
+Use that SHA in place of `jakewharton/gphotos-sync` in the commands above to manually test.
+
+
 
 LICENSE
 ======
