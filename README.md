@@ -7,8 +7,6 @@ A Docker container which runs the [`gphoto-cdp`][1] tool automatically to synchr
 
 [![Docker Image Version](https://img.shields.io/docker/v/jakewharton/gphotos-sync?sort=semver)][hub]
 [![Docker Image Size](https://img.shields.io/docker/image-size/jakewharton/gphotos-sync)][layers]
-[![Docker Image Layers](https://img.shields.io/microbadger/layers/jakewharton/gphotos-sync)][layers]
-[![Docker Pulls](https://img.shields.io/docker/pulls/jakewharton/gphotos-sync.svg)][hub]
 
  [hub]: https://hub.docker.com/r/jakewharton/gphotos-sync/
  [layers]: https://microbadger.com/images/jakewharton/gphotos-sync
@@ -92,6 +90,7 @@ $ docker run -it --rm
     -v /path/to/config:/tmp/gphotos-cdp \
     -v /path/do/downloads:/download \
     jakewharton/gphotos-sync
+    /app/sync.sh
 ```
 
 This will run until all photos have been downloaded. At this point, you should set it up to run automatically on a schedule.
@@ -114,11 +113,13 @@ The above version will run every hour and download any new photos. For help crea
  [2]: https://cron.help/#0_*_*_*_*
 
 
-### Monitoring
+### More
 
 To be notified when sync is failing visit https://healthchecks.io, create a check, and specify the ID to the container using the `HEALTHCHECK_ID` environment variable.
 
 Because the sync can occasionally fail, it's best to set a grace period on the check which is a multiple of your cron period. For example, if you run sync hourly give a grace period of two hours.
+
+To write data as a particular user, the `PUID` and `PGID` environment variables can be set to your user ID and group ID, respectively.
 
 
 ### Diagnosing Blockages
@@ -147,6 +148,8 @@ services:
       - "CRON=0 * * * *"
       #Optional:
       - "HEALTHCHECK_ID=..."
+      - "PUID=..."
+      - "PGID=..."
 ```
 
 Note: You may want to specify an explicit version rather than `latest`.
@@ -174,10 +177,8 @@ MIT. See `LICENSE.txt`.
 
     Copyright 2020 Jake Wharton
 
-Much of the container scripts were derived from [bcardiff/docker-rclone][3].
-The Chrome installation in the `Dockerfile` is from [Zenika/alpine-chrome][4].
-`jhead` installation from [sourcelevel/engine-image-optim][5]
+The Chrome installation in the `Dockerfile` is from [Zenika/alpine-chrome][3].
+`jhead` installation from [sourcelevel/engine-image-optim][4]
 
- [3]: https://github.com/bcardiff/docker-rclone
- [4]: https://github.com/Zenika/alpine-chrome
- [5]: https://github.com/sourcelevel/engine-image-optim
+ [3]: https://github.com/Zenika/alpine-chrome
+ [4]: https://github.com/sourcelevel/engine-image-optim
