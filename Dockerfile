@@ -3,7 +3,7 @@ RUN apk add --no-cache git wget build-base shellcheck
 
 RUN mkdir /overlay
 COPY root/ /overlay/
-RUN shellcheck /overlay/*
+RUN find /overlay -type f | xargs shellcheck -e SC1008
 
 # From https://github.com/sourcelevel/engine-image-optim/blob/2de5967c666fc3f7f8f24e67c0c445da403a67ef/Dockerfile#L61-L64
 ENV JHEAD_VERSION=3.04
@@ -17,11 +17,16 @@ ENV GO111MODULE=on
 RUN go get github.com/perkeep/gphotos-cdp@e9d1979707191993f1c879ae93f8dd810697fd6e
 
 
-FROM alpine:latest
+FROM oznu/s6-alpine:3.11
 LABEL maintainer="Jake Wharton <docker@jakewharton.com>"
 
-ENV CRON="" \
+ENV \
+    # Fail if cont-init scripts exit with non-zero code.
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+    CRON="" \
     HEALTHCHECK_ID="" \
+    PUID="" \
+    PGID="" \
     TZ="" \
     CHROMIUM_USER_FLAGS="--no-sandbox"
 
@@ -42,6 +47,3 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/reposi
 
 COPY --from=build /go/bin/gphotos-cdp /usr/bin/jhead /usr/bin/
 COPY root/ /
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD [""]
