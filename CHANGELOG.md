@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 0.3.0 *(2020-05-26)*
+----------------------------
+
+ * New: Switch to S6 overlay for running cron in the container. This should generally make it more well-behaved.
+ * New: `PUID` and `PGID` environment variables control what user and group the program runs (and thus writes files).
+
+
 Version 0.2.0 *(2020-05-10)*
 ----------------------------
 
