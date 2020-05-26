@@ -7,9 +7,9 @@ Not running in cron mode
 	exit 0
 fi
 
-if [ ! -d /data ]; then
+if [ ! -d /download ]; then
 	echo "
-ERROR: '/data' directory must be mounted
+ERROR: '/download' directory must be mounted
 "
 	exit 1
 fi
