@@ -11,5 +11,5 @@ set -e
 gphotos-cdp -v -dev -headless -dldir /download -run /app/fix_time.sh
 
 if [ -n "$HEALTHCHECK_ID" ]; then
-  curl --sS -X POST -o /dev/null --fail "https://hc-ping.com/$HEALTHCHECK_ID"
+  curl -sS -X POST -o /dev/null --fail "https://hc-ping.com/$HEALTHCHECK_ID"
 fi
