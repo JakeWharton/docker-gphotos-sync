@@ -1,6 +1,13 @@
 Change Log
 ==========
 
+Version 0.3.1 *(2020-10-26)*
+----------------------------
+
+ * New: `HEALTHCHECK_HOST` environment variable allows you to specify a health check host other
+   than the default, publicly-available healthchecks.io.
+
+
 Version 0.3.0 *(2020-05-26)*
 ----------------------------
 
