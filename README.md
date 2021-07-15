@@ -64,7 +64,7 @@ Visit http://localhost:6080 (or http://server-ip:6080 if running on a remote mac
 Inside the container desktop, click on the menu (lower left icon), go to "System Tools", and select "LXTerminal".
 Run the following command.
 ```bash
-chromium-browser --user-data-dir=/config --no-sandbox https://photos.google.com
+google-chrome --user-data-dir=/config --no-sandbox https://photos.google.com
 ```
 (Note: Do not change the `/config` path!)
 
