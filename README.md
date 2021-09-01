@@ -6,10 +6,9 @@ A Docker container which runs the [`gphoto-cdp`][1] tool automatically to synchr
  [1]: http://github.com/perkeep/gphotos-cdp
 
 [![Docker Image Version](https://img.shields.io/docker/v/jakewharton/gphotos-sync?sort=semver)][hub]
-[![Docker Image Size](https://img.shields.io/docker/image-size/jakewharton/gphotos-sync)][layers]
+[![Docker Image Size](https://img.shields.io/docker/image-size/jakewharton/gphotos-sync)][hub]
 
  [hub]: https://hub.docker.com/r/jakewharton/gphotos-sync/
- [layers]: https://microbadger.com/images/jakewharton/gphotos-sync
 
 
 Motivation
