@@ -1,5 +1,5 @@
 FROM golang:alpine AS build
-RUN apk add --no-cache git wget build-base
+RUN apk add --no-cache git wget build-base shadow
 
 RUN mkdir /overlay
 COPY root/ /overlay/
