@@ -1,3 +1,5 @@
+Copied directly from [this repository](https://github.com/JakeWharton/docker-gphotos-sync). As soon as I get it working, this version will cease to be updated.
+
 Docker GPhotos Sync
 ===================
 
