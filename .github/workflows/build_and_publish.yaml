@@ -18,8 +18,8 @@ jobs:
         id: docker_meta
         with:
           images: |
-            jakewharton/gphotos-sync
-            ghcr.io/jakewharton/gphotos-sync
+            arbal/gphotos-sync
+            ghcr.io/arbal/gphotos-sync
           tag-semver: |
             {{version}}
             {{major}}
@@ -27,7 +27,7 @@ jobs:
 
       - uses: docker/login-action@v1.10.0
         with:
-          username: jakewharton
+          username: arbal
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - uses: docker/login-action@v1.10.0
