@@ -14,5 +14,5 @@ jobs:
       - uses: tgymnich/fork-sync@v1.4
         with:
           owner: JakeWharton
-          base: master
+          base: trunk
           head: master
