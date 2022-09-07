@@ -13,12 +13,6 @@ ERROR: '/download' directory must be mounted
 "
 	exit 1
 fi
-if [ ! -d /config ]; then
-	echo "
-ERROR: '/config' directory must be mounted
-"
-	exit 1
-fi
 
 if [ -z "$HEALTHCHECK_ID" ]; then
 	echo "
