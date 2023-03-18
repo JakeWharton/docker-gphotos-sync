@@ -16,7 +16,7 @@ ENV GO111MODULE=on
 RUN go install github.com/perkeep/gphotos-cdp@e9d1979707191993f1c879ae93f8dd810697fd6e
 
 
-FROM crazymax/alpine-s6:3.14-edge
+FROM crazymax/alpine-s6:3.17-edge
 LABEL maintainer="Jake Wharton <docker@jakewharton.com>"
 
 ENV \
